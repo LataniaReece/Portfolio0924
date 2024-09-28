@@ -33,6 +33,14 @@ html {
   padding-right: 3rem;
 }
 
+/* Toastify styling */
+.dark-toast {
+  background-color: #464e5d;
+  color: #f7f7f9;
+}
+
+/* Animations */
+
 @keyframes fadeInName {
   from {
     opacity: 0;
@@ -68,7 +76,7 @@ html {
 
 @media (max-width: 768px) {
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }

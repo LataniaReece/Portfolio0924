@@ -8,7 +8,7 @@ interface ProjectProps {
 
 const Project: FC<ProjectProps> = ({ project }) => {
   return (
-    <div className="relative border-2 border-secondaryColorDark shadow-white rounded-xl overflow-hidden max-w-4xl xl:max-w-6xl mx-auto flex flex-col md:flex-row">
+    <div className="relative border-2 border-secondaryColorDark shadow-white rounded-xl overflow-hidden mx-auto flex flex-col md:flex-row">
       {/* Left Side Content */}
       <div className="w-full md:w-8/12 py-2 px-3 md:py-6 md:px-6 flex flex-col order-2 md:order-1">
         <div>

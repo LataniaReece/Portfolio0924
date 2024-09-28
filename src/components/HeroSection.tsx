@@ -15,7 +15,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-defaultBg bg-cover bg-center min-h-screen lg:min-h-[500px] lg:h-auto text-slate-100 relative overflow-hidden">
+    <section
+      id="home"
+      className="bg-defaultBg bg-cover bg-center min-h-screen lg:min-h-[500px] lg:h-auto text-slate-100 relative overflow-hidden"
+    >
       <div className="container flex items-center min-h-screen lg:pt-16 h-auto relative z-10">
         <div>
           <h1
