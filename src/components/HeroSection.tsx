@@ -30,13 +30,13 @@ const HeroSection = () => {
           <p className="text-[5.5vw] md:text-[2rem] font-bold leading-[1] pt-2 mb-4 bg-gradient-to-tr from-secondaryColorLight via-secondaryColor to-secondaryColorDark bg-clip-text text-transparent uppercase opacity-0 fade-tag-in">
             Software Developer
           </p>
-          <p className="text-[4vw] md:text-[1rem] lg:text-lg font-semibold text-slate-200 w-full lg:w-7/12 tracking-wide opacity-0 fade-tag-in">
+          <p className="text-[4vw] md:text-[1rem] lg:text-lg font-light text-slate-200 w-full lg:w-7/12 tracking-wider opacity-0 fade-tag-in">
             I bring digital designs to life with precision and creativity.
             Currently, I'm employed as a software developer at Nexamp, where I
             focus on building intuitive, customer-facing websites that enhance
             the user experience.
           </p>
-          <button className="mt-8 text-lg sm:text-xl uppercase tracking-wide lg:tracking-widest font-bold text-white bg-gradient-to-r from-primaryColor to-secondaryColor px-6 lg:px-10 py-3 lg:py-4 rounded-xl transition-all duration-500 bg-[length:150%_150%] bg-left hover:bg-right hover:shadow-xl transform hover:scale-105  active:scale-100 focus:outline-none focus:scale-100">
+          <button className="mt-8 text-md sm:text-lg uppercase tracking-wide lg:tracking-widest font-bold text-white bg-gradient-to-r from-primaryColor to-secondaryColor px-6 lg:px-8 py-3 lg:py-3 rounded-xl transition-all duration-500 bg-[length:150%_150%] bg-left hover:bg-right hover:shadow-xl transform hover:scale-105  active:scale-100 focus:outline-none focus:scale-100 shadow-white">
             Contact me
           </button>
         </div>

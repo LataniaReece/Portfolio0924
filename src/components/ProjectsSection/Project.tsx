@@ -1,88 +1,43 @@
 import { FC } from "react";
 import { ProjectType } from "../../types/Project";
-import styled from "styled-components";
-
-const StyledProjectImage = styled.img`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  clip-path: polygon(0 0, 20% 50%, 0 100%, 100% 100%, 100% 0);
-`;
-
-const ImageContainer = styled.div<{
-  darkerShade: string;
-  lighterShade: string;
-}>`
-  position: relative;
-  width: 40%;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      ${(props) => props.darkerShade} 50%,
-      ${(props) => props.lighterShade} 50%
-    ); /* Red on top, Yellow on bottom */
-    clip-path: polygon(
-      0 0,
-      20% 50%,
-      0 100%,
-      40% 100%,
-      20% 50%,
-      35% 0
-    ); /* Purple hourglass shape */
-
-    z-index: 20; /* Positioned behind the image */
-    opacity: 0.7; /* Ensure full opacity */
-  }
-`;
+import styles from "./Project.module.css";
 
 interface ProjectProps {
   project: ProjectType;
-  index: number;
 }
 
-const Project: FC<ProjectProps> = ({ project, index }) => {
-  const isEvenIndex = index % 2 === 0;
-
-  const darkerShade = "#6C7A89";
-  const lighterShade = "#95A5A6";
-
+const Project: FC<ProjectProps> = ({ project }) => {
   return (
-    <div
-      className="relative border border-gray-300 shadow-white rounded-lg overflow-hidden max-w-4xl mx-auto flex h-[325px]"
-      style={{ backgroundColor: isEvenIndex ? "#E0E0E0" : "#D8E4DC" }}
-    >
+    <div className="relative border-2 border-secondaryColorDark shadow-white rounded-xl overflow-hidden max-w-4xl xl:max-w-6xl mx-auto flex flex-col md:flex-row">
       {/* Left Side Content */}
-      <div className="w-8/12 p-6 flex flex-col justify-center">
-        <h3 className="text-3xl font-bold mb-2 text-black">{project.title}</h3>
-        <p className="text-gray-500 mb-4">{project.description}</p>
+      <div className="w-full md:w-8/12 py-2 px-3 md:py-6 md:px-6 flex flex-col order-2 md:order-1">
+        <div>
+          <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-slate-50">
+            {project.title}
+          </h3>
+          <p className="text-slate-300 tracking-wide mb-4">
+            {project.description}
+          </p>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag, idx) => (
-            <span
-              key={idx}
-              className="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full border border-gray-300"
-            >
-              {tag}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="bg-[#BFBFD9] text-gray-800 text-xs font-medium px-3 py-1 rounded-full border border-[#BFBFD9]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Buttons */}
-        <div className="flex space-x-4">
+        <div className="mt-2 mb-2 md:mt-8 md:mb-0 flex space-x-4">
           <a
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-blue-500 text-black px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            className="inline-block bg-slate-500 text-slate-100 px-4 py-2 rounded-lg hover:bg-slate-300 hover:text-slate-900 transition shadow-whiteLight"
           >
             Live Demo
           </a>
@@ -90,24 +45,23 @@ const Project: FC<ProjectProps> = ({ project, index }) => {
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gray-500 text-black px-4 py-2 rounded-lg hover:bg-gray-600 transition"
+            className="inline-block bg-slate-100 text-black px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition shadow-whiteLight"
           >
             View Source
           </a>
         </div>
       </div>
       {/* Right Side Image */}
-      <ImageContainer darkerShade={darkerShade} lighterShade={lighterShade}>
-        <StyledProjectImage src={project.image} alt={project.title} />
+      <div
+        className={`${styles.imageContainer} relative w-full h-48 md:h-auto md:w-[40%] order-1 md:order-2`}
+      >
+        <img className={styles.image} src={project.image} alt={project.title} />
 
         {/* Overlay on top of the image */}
         <div
-          className="absolute inset-0 bg-black bg-opacity-50 z-10"
-          style={{
-            clipPath: "polygon(0 0, 20% 50%, 0 100%, 100% 100%, 100% 0)",
-          }}
+          className={`${styles.imageOverlay} absolute inset-0 bg-black bg-opacity-50 z-10`}
         ></div>
-      </ImageContainer>
+      </div>
     </div>
   );
 };

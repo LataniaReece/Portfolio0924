@@ -1,0 +1,63 @@
+.imageContainer {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #b1bed2 50%, #ffa399 50%);
+    clip-path: polygon(0 0, 20% 50%, 0 100%, 40% 100%, 20% 50%, 35% 0);
+    z-index: 20;
+    opacity: 0.45;
+  }
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 20% 50%, 0 100%, 100% 100%, 100% 0);
+}
+
+.imageOverlay {
+  clip-path: polygon(0 0, 20% 50%, 0 100%, 100% 100%, 100% 0);
+}
+
+@media (max-width: 767px) {
+  .imageContainer {
+    &::before {
+      content: none;
+      clip-path: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(40, 44, 52));
+      z-index: 1;
+      opacity: 0.8;
+    }
+  }
+
+  .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    clip-path: none;
+  }
+
+  .imageOverlay {
+    clip-path: none;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
