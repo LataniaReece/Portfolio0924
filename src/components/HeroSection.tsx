@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
 const HeroSection = () => {
-  const nameLetterAnimationDelay = 0.08;
+  const nameLetterAnimationDelay = 0.04;
 
   const renderLetters = (name: string) => {
     if (!name) return null;
@@ -12,7 +12,7 @@ const HeroSection = () => {
         className="inline-block"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * nameLetterAnimationDelay, duration: 0.5 }}
+        transition={{ delay: index * nameLetterAnimationDelay, duration: 0.3 }}
       >
         {letter === " " ? "\u00A0" : letter}
       </motion.span>
