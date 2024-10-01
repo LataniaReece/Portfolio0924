@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import DOMPurify from "dompurify";
+import { motion } from "framer-motion";
 
 import SectionHeader from "../SectionHeader";
 import SectionSubHeading from "../SectionSubHeading";
@@ -92,7 +93,13 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="py-12 bg-defaultBg">
-      <div className="container mx-auto">
+      <motion.div
+        className="container mx-auto"
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <SectionHeader heading="Contact Me" />
         <SectionSubHeading subHeading="Let’s connect and build something great together!" />
 
@@ -103,7 +110,7 @@ const ContactSection = () => {
         >
           {({ isSubmitting }) => (
             <Form
-              className="w-full mx-auto bg-defaultBgDarker p-6 rounded-lg shadow-white"
+              className="w-full mx-auto bg-defaultBgDarker p-6 md:p-10 rounded-lg shadow-white"
               noValidate
             >
               <div className="mb-4">
@@ -120,6 +127,7 @@ const ContactSection = () => {
                   className="text-red-500 text-sm"
                 />
               </div>
+
               <div className="mb-4">
                 <Field
                   type="email"
@@ -134,13 +142,14 @@ const ContactSection = () => {
                   className="text-red-500 text-sm"
                 />
               </div>
+
               <div className="mb-4">
                 <Field
                   as="textarea"
                   name="emailMessage"
                   rows={4}
                   placeholder="How can I help you?"
-                  className="w-full px-3 py-2 text-slate-50 placeholder-slate-400 bg-transparent  border rounded-md border-slate-400 focus:outline-none focus:border-primaryColor"
+                  className="w-full px-3 py-2 text-slate-50 placeholder-slate-400 bg-transparent border rounded-md border-slate-400 focus:outline-none focus:border-primaryColor"
                   required
                 />
                 <ErrorMessage
@@ -149,6 +158,7 @@ const ContactSection = () => {
                   className="text-red-500 text-sm"
                 />
               </div>
+
               <button
                 type="submit"
                 className="w-full py-2 text-slate-50 bg-primaryColor hover:bg-primaryColorDark rounded-lg transition"
@@ -159,7 +169,7 @@ const ContactSection = () => {
             </Form>
           )}
         </Formik>
-      </div>
+      </motion.div>
     </section>
   );
 };

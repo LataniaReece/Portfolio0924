@@ -9,7 +9,7 @@ export default {
       colors: {
         defaultBg: "#282C34",
         defaultBgDark: "#1B1D23",
-        defaultBgDarker: "#090A0C",
+        defaultBgDarker: "#121317",
         primaryColor: "#FF8F85",
         primaryColorLight: "#FFDAD6",
         primaryColorDark: "#FF695C",

@@ -44,9 +44,17 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="text-slate-100 text-2xl font-bold flex items-center gap-2">
+        <ScrollLink
+          to="home"
+          smooth={true}
+          duration={500}
+          className="text-slate-100 text-2xl font-bold flex items-center gap-2 hover:cursor-pointer"
+        >
           <img src="/assets/logo.png" width={42} />
-        </div>
+        </ScrollLink>
+        {/* <div className="text-slate-100 text-2xl font-bold flex items-center gap-2">
+          <img src="/assets/logo.png" width={42} />
+        </div> */}
 
         {/* Desktop nav */}
         <ul className="hidden lg:flex space-x-4 text-slate-100">
