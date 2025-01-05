@@ -2,6 +2,23 @@ import { ProjectType } from "../types/Project";
 
 export default [
   {
+    title: "Recipe Haven",
+    description: `A dynamic recipe app built with Next.js, TypeScript, and Tailwind CSS, leveraging the Edamam API for real-time data. It integrates Supabase with PostgreSQL for managing users and saving favorites, and uses NextAuth with Google for secure authentication.`,
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Edamam API",
+      "Supabase",
+      "PostgreSQL",
+      "NextAuth",
+      "Google Authentication",
+    ],
+    liveLink: "https://recipe-nextjs-app.vercel.app/",
+    githubLink: "https://github.com/LataniaReece/recipe-haven",
+    image: "/assets/projectImgs/recipehaven.png",
+  },
+  {
     title: "Blog Fullstack App",
     description: `A responsive, full-stack blog app. Uses
         Node.js, Prisma, and PostgreSQL with React, Tailwind CSS and Framer Motion. Also manages state and data with
@@ -63,15 +80,5 @@ export default [
     liveLink: "https://latania-budget-app.netlify.app/",
     githubLink: "https://github.com/LataniaReece/react-mui-budget-app",
     image: "/assets/projectImgs/budgetapp2023.png",
-  },
-  {
-    title: "Recipe App",
-    description: `A responsive frontend recipe app using the Edamam recipe API. 
-        Uses HTML, CSS, and JS with axios for fetching API data. SASS/SCSS was used for styling. 
-        Demonstrates skills with modals and dropdowns.`,
-    tags: ["HTML", "CSS", "JavaScript", "SASS/SCSS", "API"],
-    liveLink: "http://latania-recipeapp.netlify.app/",
-    githubLink: "https://github.com/LataniaReece/RecipeApp",
-    image: "/assets/projectImgs/recipeapp.JPG",
   },
 ] as ProjectType[];
