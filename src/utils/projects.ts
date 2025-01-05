@@ -39,7 +39,7 @@ export default [
   {
     title: "Notes App",
     description: `A sleek and dynamic frontend notes application that harnesses
-        @tinymce/tinymce-react for rich text editing and Tailwind CSS for an
+        ReactQuill for rich text editing and Tailwind CSS for an
         intuitive, responsive design.`,
     tags: [
       "React",
