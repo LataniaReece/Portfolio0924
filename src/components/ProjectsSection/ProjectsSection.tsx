@@ -8,8 +8,8 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-12 bg-defaultBg">
       <div className="container mx-auto">
-        <SectionHeader heading="My Projects" />
-        <SectionSubHeading subHeading="A collection of projects I've worked on" />
+        <SectionHeader heading="Selected Projects" />
+        <SectionSubHeading subHeading="Projects that show how I think through product, engineering, and user experience" />
         <div className="flex flex-col space-y-10">
           {projects.map((project, index) => (
             <motion.div

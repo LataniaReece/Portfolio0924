@@ -49,10 +49,11 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1, duration: 0.7 }}
           >
-            I bring digital designs to life with precision and creativity.
-            Currently, I'm employed as a software developer at Nexamp, where I
-            focus on building intuitive, customer-facing websites that enhance
-            the user experience.
+            I build thoughtful, user-centered software that turns real problems
+            into clear, useful products. At Nexamp, I work on customer-facing
+            experiences with an emphasis on usability and clarity. Outside of
+            work, I build personal projects that let me explore ideas more
+            deeply and think through what makes software genuinely useful.
           </motion.p>
           <Link to="contact" smooth={true} duration={500}>
             <motion.button

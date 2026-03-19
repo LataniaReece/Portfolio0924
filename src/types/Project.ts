@@ -5,4 +5,5 @@ export type ProjectType = {
   liveLink: string;
   githubLink: string;
   tags: string[];
+  featured?: boolean;
 };

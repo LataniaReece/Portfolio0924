@@ -12,6 +12,11 @@ const Project: FC<ProjectProps> = ({ project }) => {
       {/* Left Side Content */}
       <div className="w-full md:w-8/12 py-2 px-3 md:py-6 md:px-6 flex flex-col order-2 md:order-1">
         <div>
+          {project.featured && (
+            <p className="mb-2 inline-flex w-fit rounded-full border border-primaryColor/60 bg-primaryColor/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
+              Featured Project
+            </p>
+          )}
           <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-slate-50">
             {project.title}
           </h3>

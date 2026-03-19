@@ -2,8 +2,25 @@ import { ProjectType } from "../types/Project";
 
 export default [
   {
+    title: "SpendSense",
+    description: `A personal finance reflection app I built after realizing I wanted more than charts and budget totals. I designed a full-stack workflow for importing transactions, detecting duplicates, learning merchant-level categorization over time, and generating AI reflections that feel actionable, supportive, and grounded in real spending behavior.`,
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "OpenAI",
+      "CSV Parsing",
+      "Data Processing",
+    ],
+    liveLink: "https://spendria.vercel.app/",
+    githubLink: "https://github.com/LataniaReece/spendria",
+    image: "/assets/projectImgs/spendsense-dashboard.png",
+    featured: true,
+  },
+  {
     title: "Recipe Haven",
-    description: `A dynamic recipe app built with Next.js, TypeScript, and Tailwind CSS, leveraging the Edamam API for real-time data. It integrates Supabase with PostgreSQL for managing users and saving favorites, and uses NextAuth with Google for secure authentication.`,
+    description: `A recipe discovery app built to make browsing, saving, and returning to meals feel more seamless. I combined real-time recipe search with authenticated favorites so the experience feels closer to a product someone could actually rely on, not just a demo of API integration.`,
     tags: [
       "Next.js",
       "TypeScript",
@@ -20,9 +37,7 @@ export default [
   },
   {
     title: "Blog Fullstack App",
-    description: `A responsive, full-stack blog app. Uses
-        Node.js, Prisma, and PostgreSQL with React, Tailwind CSS and Framer Motion. Also manages state and data with
-        Redux Toolkit and RTK Query.`,
+    description: `A full-stack blogging platform where I focused on the coordination between frontend experience and backend data flow. The project gave me space to work through patterns around API design, state management, and rendering a responsive interface that still feels polished and intentional.`,
     tags: [
       "Node",
       "PostgreSQL",
@@ -38,9 +53,7 @@ export default [
   },
   {
     title: "Notes App",
-    description: `A sleek and dynamic frontend notes application that harnesses
-        ReactQuill for rich text editing and Tailwind CSS for an
-        intuitive, responsive design.`,
+    description: `A notes app built around the everyday need to capture and organize information without friction. I focused on creating a cleaner editing experience with rich text support and a UI that stays lightweight enough for quick, repeated use.`,
     tags: [
       "React",
       "JavaScript",
@@ -52,33 +65,5 @@ export default [
     liveLink: "https://latania-notesapp.netlify.app",
     githubLink: "https://github.com/LataniaReece/Notes-App",
     image: "/assets/projectImgs/notesApp.png",
-  },
-  {
-    title: "MediaDB App",
-    description: `A responsive frontend streaming app using the third-party API
-        “themoviedb” for movie and TV data. Developed with React + TypeScript 
-        using Context API for state management. Select components are also backed by 
-        robust unit tests.`,
-    tags: ["React", "JavaScript", "TypeScript", "Context API", "Unit Tests"],
-    liveLink: "https://mediadb.netlify.app/",
-    githubLink: "https://github.com/LataniaReece/MediaDB",
-    image: "/assets/projectImgs/mediadb.png",
-  },
-  {
-    title: "Budget App",
-    description: `A responsive frontend budget app using react-chartjs-2 and 
-        @mui/x-data-grid for data presentation. Built with React + TypeScript using 
-        Context API for state management, and backed by robust unit tests.`,
-    tags: [
-      "React",
-      "JavaScript",
-      "TypeScript",
-      "Context API",
-      "react-chartjs-2",
-      "Unit Tests",
-    ],
-    liveLink: "https://latania-budget-app.netlify.app/",
-    githubLink: "https://github.com/LataniaReece/react-mui-budget-app",
-    image: "/assets/projectImgs/budgetapp2023.png",
   },
 ] as ProjectType[];
