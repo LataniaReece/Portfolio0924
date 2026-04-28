@@ -4,7 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        body: ["Manrope", "sans-serif"],
+        display: ['"DM Serif Display"', "serif"],
+        inter: ["Manrope", "sans-serif"],
       },
       colors: {
         defaultBg: "#282C34",

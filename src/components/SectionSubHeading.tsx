@@ -6,7 +6,7 @@ interface SectionSubHeadingProps {
 
 const SectionSubHeading: FC<SectionSubHeadingProps> = ({ subHeading }) => {
   return (
-    <p className="text-center text-lg font-light text-slate-200 tracking-wide mb-8">
+    <p className="mx-auto mb-8 max-w-2xl text-center text-lg leading-8 text-slate-300">
       {subHeading}
     </p>
   );

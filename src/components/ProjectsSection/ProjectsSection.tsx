@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
 import projects from "../../utils/projects";
 import SectionHeader from "../SectionHeader";
-import SectionSubHeading from "../SectionSubHeading";
 import Project from "./Project";
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-12 bg-defaultBg">
-      <div className="container mx-auto">
+    <section id="projects" className="section-shell py-20">
+      <div className="container mx-auto relative z-10">
         <SectionHeader heading="Selected Projects" />
-        <SectionSubHeading subHeading="Projects that show how I think through product, engineering, and user experience" />
-        <div className="flex flex-col space-y-10">
+        <div className="flex flex-col space-y-10 mt-5">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}

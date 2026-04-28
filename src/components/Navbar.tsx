@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
+import { SCROLL_DURATION } from "../utils/constants";
 import {
   FaHome,
   FaCode,
@@ -34,35 +35,36 @@ const Navbar = () => {
   }, []);
 
   const navLinkClass =
-    "cursor-pointer text-slate-100 px-2 py-1 rounded-lg flex items-center space-x-2 hover:bg-slate-100 hover:text-black hover:scale-110 transform transition duration-200";
+    "cursor-pointer rounded-full px-4 py-2 flex items-center space-x-2 text-sm font-medium text-slate-200 transition duration-200 hover:bg-white/10 hover:text-white";
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-40 px-6 py-3 transition-all duration-300 ${
-        isScrolled ? "bg-defaultBgDark shadow-white" : "bg-transparent"
-      }`}
-    >
-      <div className="flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-40 px-4 md:px-6 py-4 transition-all duration-300">
+      <div
+        className={`nav-container rounded-full px-4 md:px-6 py-3 flex justify-between items-center transition-all duration-300 ${
+          isScrolled
+            ? "soft-panel"
+            : "bg-[rgba(24,21,22,0.45)] border border-white/5 backdrop-blur-md"
+        }`}
+      >
         {/* Logo */}
         <ScrollLink
           to="home"
           smooth={true}
-          duration={500}
-          className="text-slate-100 text-2xl font-bold flex items-center gap-2 hover:cursor-pointer"
+          duration={SCROLL_DURATION}
+          className="text-slate-100 text-2xl font-bold flex items-center gap-3 hover:cursor-pointer"
         >
-          <img src="/assets/logo.png" width={42} />
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/8 ring-1 ring-white/10">
+            <img src="/assets/logo.png" width={36} alt="Latania Reece logo" />
+          </span>
         </ScrollLink>
-        {/* <div className="text-slate-100 text-2xl font-bold flex items-center gap-2">
-          <img src="/assets/logo.png" width={42} />
-        </div> */}
 
         {/* Desktop nav */}
-        <ul className="hidden lg:flex space-x-4 text-slate-100">
+        <ul className="hidden lg:flex items-center space-x-2 text-slate-100">
           <li>
             <ScrollLink
               to="home"
               smooth={true}
-              duration={500}
+              duration={SCROLL_DURATION}
               className={navLinkClass}
             >
               <FaHome className="text-primaryColor" />
@@ -73,7 +75,7 @@ const Navbar = () => {
             <ScrollLink
               to="projects"
               smooth={true}
-              duration={500}
+              duration={SCROLL_DURATION}
               className={navLinkClass}
             >
               <FaCode className="text-primaryColor" />
@@ -84,7 +86,7 @@ const Navbar = () => {
             <ScrollLink
               to="contact"
               smooth={true}
-              duration={500}
+              duration={SCROLL_DURATION}
               className={navLinkClass}
             >
               <FaEnvelope className="text-primaryColor" />
@@ -97,22 +99,27 @@ const Navbar = () => {
           <a
             href="https://www.linkedin.com/in/latania-reece/"
             target="_blank"
-            className="block text-secondaryColor hover:text-secondaryColorDark"
+            rel="noopener noreferrer"
+            className="block rounded-full border border-white/10 bg-white/5 p-2 text-primaryColorLight transition hover:border-primaryColor/40 hover:bg-primaryColor/10 hover:text-white"
           >
-            <FaLinkedin size="25" />
+            <FaLinkedin size="20" />
           </a>
           <a
             href="https://github.com/LataniaReece"
             target="_blank"
-            className="block text-secondaryColor hover:text-secondaryColorDark"
+            rel="noopener noreferrer"
+            className="block rounded-full border border-white/10 bg-white/5 p-2 text-primaryColorLight transition hover:border-primaryColor/40 hover:bg-primaryColor/10 hover:text-white"
           >
-            <FaGithubSquare size="25" />
+            <FaGithubSquare size="20" />
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <div className="lg:hidden">
-          <button onClick={toggleMenu} className="text-primaryColor">
+          <button
+            onClick={toggleMenu}
+            className="rounded-full border border-white/10 bg-white/5 p-2 text-primaryColor"
+          >
             {!menuOpen && <FaBars size={25} />}
           </button>
         </div>
@@ -130,7 +137,7 @@ const Navbar = () => {
 
       {/* Mobile sliding drawer */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-defaultBgDark text-slate-100 z-20 transform ${
+        className={`fixed top-0 left-0 h-full w-64 bg-[#1f1b1d] text-slate-100 z-20 transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-500 ease-in-out lg:hidden`}
       >
@@ -147,7 +154,7 @@ const Navbar = () => {
               <ScrollLink
                 to="home"
                 smooth={true}
-                duration={500}
+                duration={SCROLL_DURATION}
                 className={navLinkClass}
                 onClick={toggleMenu}
               >
@@ -159,7 +166,7 @@ const Navbar = () => {
               <ScrollLink
                 to="projects"
                 smooth={true}
-                duration={500}
+                duration={SCROLL_DURATION}
                 className={navLinkClass}
                 onClick={toggleMenu}
               >
@@ -171,7 +178,7 @@ const Navbar = () => {
               <ScrollLink
                 to="contact"
                 smooth={true}
-                duration={500}
+                duration={SCROLL_DURATION}
                 className={navLinkClass}
                 onClick={toggleMenu}
               >
@@ -186,14 +193,16 @@ const Navbar = () => {
             <a
               href="https://www.linkedin.com/in/latania-reece/"
               target="_blank"
-              className="block text-secondaryColor hover:text-secondaryColorDark"
+              rel="noopener noreferrer"
+              className="block text-primaryColorLight hover:text-white"
             >
               <FaLinkedin size="25" />
             </a>
             <a
               href="https://github.com/LataniaReece"
               target="_blank"
-              className="block text-secondaryColor hover:text-secondaryColorDark"
+              rel="noopener noreferrer"
+              className="block text-primaryColorLight hover:text-white"
             >
               <FaGithubSquare size="25" />
             </a>

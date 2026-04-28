@@ -92,9 +92,9 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-12 bg-defaultBg">
+    <section id="contact" className="section-shell py-20">
       <motion.div
-        className="container mx-auto"
+        className="container mx-auto relative z-10"
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
@@ -110,7 +110,7 @@ const ContactSection = () => {
         >
           {({ isSubmitting }) => (
             <Form
-              className="w-full mx-auto bg-defaultBgDarker p-6 md:p-10 rounded-lg shadow-white"
+              className="soft-panel w-full mx-auto rounded-[30px] p-6 md:p-10"
               noValidate
             >
               <div className="mb-4">
@@ -118,7 +118,7 @@ const ContactSection = () => {
                   type="text"
                   name="fromName"
                   placeholder="What's your name?"
-                  className="w-full px-3 py-2 text-white placeholder-slate-400 bg-transparent border rounded-md border-slate-400 focus:outline-none focus:border-primaryColor"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-primaryColor"
                   required
                 />
                 <ErrorMessage
@@ -133,7 +133,7 @@ const ContactSection = () => {
                   type="email"
                   name="fromEmail"
                   placeholder="What's your email address?"
-                  className="w-full px-3 py-2 text-slate-50 placeholder-slate-400 bg-transparent border rounded-md border-slate-400 focus:outline-none focus:border-primaryColor"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-50 placeholder-slate-400 focus:outline-none focus:border-primaryColor"
                   required
                 />
                 <ErrorMessage
@@ -149,7 +149,7 @@ const ContactSection = () => {
                   name="emailMessage"
                   rows={4}
                   placeholder="How can I help you?"
-                  className="w-full px-3 py-2 text-slate-50 placeholder-slate-400 bg-transparent border rounded-md border-slate-400 focus:outline-none focus:border-primaryColor"
+                  className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-slate-50 placeholder-slate-400 focus:outline-none focus:border-primaryColor"
                   required
                 />
                 <ErrorMessage
@@ -161,7 +161,7 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full py-2 text-slate-50 bg-primaryColor hover:bg-primaryColorDark rounded-lg transition"
+                className="w-full rounded-full bg-primaryColor py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#241e20] transition hover:bg-primaryColorLight"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

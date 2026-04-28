@@ -6,7 +6,7 @@ interface SectionHeaderProps {
 
 const SectionHeader: FC<SectionHeaderProps> = ({ heading }) => {
   return (
-    <h2 className="text-center text-4xl font-semibold text-slate-50 tracking-wider mb-4 mt-8">
+    <h2 className="font-display text-center text-5xl leading-none text-[#fff4ef] mb-4 mt-8 md:text-6xl">
       {heading}
     </h2>
   );

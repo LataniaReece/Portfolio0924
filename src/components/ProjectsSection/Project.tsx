@@ -8,27 +8,49 @@ interface ProjectProps {
 
 const Project: FC<ProjectProps> = ({ project }) => {
   return (
-    <div className="relative border-2 border-secondaryColorDark shadow-white rounded-xl overflow-hidden mx-auto flex flex-col md:flex-row">
+    <article
+      className={`soft-panel relative mx-auto overflow-hidden rounded-[30px] ${
+        project.featured
+          ? "grid gap-0 lg:grid-cols-[minmax(0,1.1fr)_460px]"
+          : "flex flex-col md:flex-row"
+      }`}
+    >
       {/* Left Side Content */}
-      <div className="w-full md:w-8/12 py-2 px-3 md:py-6 md:px-6 flex flex-col order-2 md:order-1">
+      <div
+        className={`flex flex-col order-2 ${
+          project.featured
+            ? "w-full px-5 py-6 md:px-8 md:py-8 lg:order-1"
+            : "w-full md:w-8/12 px-4 py-5 md:px-6 md:py-6 md:order-1"
+        }`}
+      >
         <div>
           {project.featured && (
-            <p className="mb-2 inline-flex w-fit rounded-full border border-primaryColor/60 bg-primaryColor/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primaryColor">
+            <p className="mb-4 inline-flex w-fit rounded-full border border-primaryColor/40 bg-primaryColor/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primaryColorLight">
               Featured Project
             </p>
           )}
-          <h3 className="text-2xl md:text-3xl font-semibold mb-2 text-slate-50">
+          <h3
+            className={`mb-3 text-slate-50 ${
+              project.featured
+                ? "font-display text-4xl md:text-5xl"
+                : "text-2xl md:text-3xl font-semibold"
+            }`}
+          >
             {project.title}
           </h3>
-          <p className="text-slate-300 tracking-wide mb-4">
+          <p
+            className={`mb-5 tracking-wide text-slate-300 ${
+              project.featured ? "max-w-2xl text-lg leading-8" : "leading-7"
+            }`}
+          >
             {project.description}
           </p>
 
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="mb-4 flex flex-wrap gap-2">
             {project.tags.map((tag, idx) => (
               <span
                 key={idx}
-                className="bg-[#BFBFD9] text-gray-800 text-xs font-medium px-3 py-1 rounded-full border border-[#BFBFD9]"
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-200"
               >
                 {tag}
               </span>
@@ -37,12 +59,12 @@ const Project: FC<ProjectProps> = ({ project }) => {
         </div>
 
         {/* Buttons */}
-        <div className="mt-2 mb-2 md:mt-8 md:mb-0 flex space-x-4">
+        <div className="mt-3 mb-2 flex flex-wrap gap-4 md:mt-8 md:mb-0">
           <a
             href={project.liveLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-slate-500 text-slate-100 px-4 py-2 rounded-lg hover:bg-slate-300 hover:text-slate-900 transition shadow-whiteLight"
+            className="inline-block rounded-full bg-primaryColor px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#241e20] transition hover:bg-primaryColorLight"
           >
             Live Demo
           </a>
@@ -50,7 +72,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-slate-100 text-black px-4 py-2 rounded-lg hover:bg-slate-400 hover:text-white transition shadow-whiteLight"
+            className="inline-block rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-slate-100 transition hover:bg-white/10"
           >
             View Source
           </a>
@@ -58,16 +80,20 @@ const Project: FC<ProjectProps> = ({ project }) => {
       </div>
       {/* Right Side Image */}
       <div
-        className={`${styles.imageContainer} relative w-full h-48 md:h-auto md:w-[40%] order-1 md:order-2`}
+        className={`${styles.imageContainer} relative order-1 ${
+          project.featured
+            ? "min-h-[300px] lg:order-2 lg:min-h-full"
+            : "h-56 w-full md:h-auto md:w-[40%] md:order-2"
+        }`}
       >
         <img className={styles.image} src={project.image} alt={project.title} />
 
         {/* Overlay on top of the image */}
         <div
-          className={`${styles.imageOverlay} absolute inset-0 bg-black bg-opacity-50 z-10`}
+          className={`${styles.imageOverlay} absolute z-10`}
         ></div>
       </div>
-    </div>
+    </article>
   );
 };
 

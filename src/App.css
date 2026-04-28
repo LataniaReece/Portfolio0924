@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@200..800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,12 +12,31 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: #f6efe8;
+  background:
+    radial-gradient(circle at top left, rgba(255, 143, 133, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(104, 195, 163, 0.12), transparent 22%),
+    linear-gradient(180deg, #1a1718 0%, #211d1e 40%, #171618 100%);
+}
+
+a {
+  color: inherit;
+}
+
 .main {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: cover;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .nav-container {
@@ -33,10 +52,43 @@ html {
   padding-right: 3rem;
 }
 
+.section-shell {
+  position: relative;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 16%),
+    radial-gradient(circle at top left, rgba(255, 218, 214, 0.08), transparent 28%);
+}
+
+.soft-panel {
+  background: rgba(34, 29, 31, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+}
+
+.warm-pill {
+  border: 1px solid rgba(255, 218, 214, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: #f9d7d2;
+}
+
+.soft-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
 /* Toastify styling */
 .dark-toast {
-  background-color: #464e5d;
-  color: #f7f7f9;
+  background-color: #322d2f;
+  color: #f7f3ef;
 }
 
 /* Animations */

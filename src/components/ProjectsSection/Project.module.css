@@ -1,63 +1,38 @@
 .imageContainer {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #b1bed2 50%, #ffa399 50%);
-    clip-path: polygon(0 0, 20% 50%, 0 100%, 40% 100%, 20% 50%, 35% 0);
-    z-index: 20;
-    opacity: 0.45;
-  }
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.12));
 }
 
 .image {
-  position: relative;
+  position: absolute;
+  inset: 18px;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: polygon(0 0, 20% 50%, 0 100%, 100% 100%, 100% 0);
+  width: calc(100% - 36px);
+  height: calc(100% - 36px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
 }
 
 .imageOverlay {
-  clip-path: polygon(0 0, 20% 50%, 0 100%, 100% 100%, 100% 0);
+  border-radius: 24px;
+  inset: 18px;
+  background:
+    linear-gradient(180deg, rgba(26, 23, 24, 0.04), rgba(26, 23, 24, 0.28)),
+    linear-gradient(140deg, rgba(255, 143, 133, 0.18), transparent 38%);
 }
 
 @media (max-width: 767px) {
-  .imageContainer {
-    &::before {
-      content: none;
-      clip-path: none;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(40, 44, 52));
-      z-index: 1;
-      opacity: 0.8;
-    }
-  }
-
   .image {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-    clip-path: none;
+    inset: 14px;
+    width: calc(100% - 28px);
+    height: calc(100% - 28px);
+    border-radius: 20px;
   }
 
   .imageOverlay {
-    clip-path: none;
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    inset: 14px;
+    border-radius: 20px;
   }
 }
