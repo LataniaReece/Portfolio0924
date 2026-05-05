@@ -522,18 +522,6 @@ const HeroSection = () => {
           </motion.aside>
         </div>
       </div>
-      <motion.div
-        className="absolute -left-20 top-28 h-72 w-72 rounded-full bg-primaryColor/15 blur-[110px]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
-      ></motion.div>
-      <motion.div
-        className="absolute bottom-8 right-0 h-80 w-80 rounded-full bg-secondaryColor/10 blur-[130px]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4 }}
-      />
     </section>
   );
 };

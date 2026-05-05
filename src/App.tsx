@@ -11,8 +11,8 @@ import "./App.css";
 function App() {
   return (
     <>
+      <Navbar />
       <div className="main">
-        <Navbar />
         <HeroSection />
         <ProjectsSection />
         <ContactSection />

@@ -14,7 +14,7 @@ export default [
     ],
     liveLink: "https://spendsense-five.vercel.app/",
     githubLink: "https://github.com/LataniaReece/SpendSense",
-    image: "/assets/projectImgs/spendsense-dashboard.png",
+    image: "/assets/projectImgs/spendsense-dashboard.webp",
     featured: true,
   },
   {
@@ -32,7 +32,7 @@ export default [
     ],
     liveLink: "https://recipe-nextjs-app.vercel.app/",
     githubLink: "https://github.com/LataniaReece/recipe-haven",
-    image: "/assets/projectImgs/recipehaven.png",
+    image: "/assets/projectImgs/recipehaven.webp",
   },
   {
     title: "Blog Fullstack App",
@@ -48,7 +48,7 @@ export default [
     ],
     liveLink: "https://blog-fullstack-app-ui.vercel.app/",
     githubLink: "https://github.com/LataniaReece/blog_fullstack_app",
-    image: "/assets/projectImgs/blogFullstack.png",
+    image: "/assets/projectImgs/blogFullstack.webp",
   },
   {
     title: "Notes App",
@@ -63,6 +63,6 @@ export default [
     ],
     liveLink: "https://latania-notesapp.netlify.app",
     githubLink: "https://github.com/LataniaReece/Notes-App",
-    image: "/assets/projectImgs/notesApp.png",
+    image: "/assets/projectImgs/notesApp.webp",
   },
 ] as ProjectType[];

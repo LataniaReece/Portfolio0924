@@ -20,9 +20,12 @@ body {
   font-family: "Manrope", sans-serif;
   color: #f6efe8;
   background:
-    radial-gradient(circle at top left, rgba(255, 143, 133, 0.18), transparent 30%),
-    radial-gradient(circle at 85% 15%, rgba(104, 195, 163, 0.12), transparent 22%),
-    linear-gradient(180deg, #1a1718 0%, #211d1e 40%, #171618 100%);
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 143, 133, 0.08),
+      transparent 18%
+    ),
+    linear-gradient(180deg, #1a1718 0%, #211d1e 55%, #171618 100%);
 }
 
 a {
@@ -32,9 +35,6 @@ a {
 .main {
   min-height: 100vh;
   width: 100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: cover;
   position: relative;
   overflow-x: hidden;
 }
@@ -56,23 +56,12 @@ a {
   position: relative;
 }
 
-.section-shell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 16%),
-    radial-gradient(circle at top left, rgba(255, 218, 214, 0.08), transparent 28%);
-}
-
 .soft-panel {
-  background: rgba(34, 29, 31, 0.72);
+  background: rgba(34, 29, 31, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 22px 60px rgba(0, 0, 0, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(16px);
 }
 
 .warm-pill {
